@@ -1,0 +1,250 @@
+@font-face{
+    font-family:'Makcasa';
+    src:url('FONTS/Makcasa-Regular.otf') format('opentype');
+    font-display:swap
+}
+@font-face{
+    font-family:'Milesdane';
+    src:url('FONTS/Milesdane Trial.otf') format('opentype');
+    font-display:swap
+}
+@font-face{
+    font-family:'Revista';
+    src:url('FONTS/REVISTA.ttf') format('truetype');
+    font-display:swap
+}
+@font-face{
+    font-family:'ActionComics';
+    src:url('FONTS/Action Comics.ttf') format('truetype');
+    font-display:swap
+}
+@font-face{
+    font-family:'Against';
+    src:url('FONTS/against regular.otf') format('opentype');
+    font-display:swap
+}
+@font-face{
+    font-family:'Championship';
+    src:url('FONTS/Championship.ttf') format('truetype');
+    font-display:swap
+}
+@font-face{
+    font-family:'Go3';
+    src:url('FONTS/go3v2.ttf') format('truetype');
+    font-display:swap
+}
+:root{
+    --rojo:#ed1d24;
+    --verde:#38d49b;
+    --morado:#9a55ee;
+    --violeta:#c397ff;
+    --azul:#5caaff;
+    --gris:#aab1c1
+}
+*{
+    box-sizing:border-box
+}
+html{
+    scroll-behavior:smooth
+}
+body{
+    background:#08090e;
+    color:#f5f5f7;
+    font-family:'Revista',Arial,sans-serif;
+    overflow-x:hidden
+}
+h1,h2,h3,.navbar-brand{
+    font-family:'ActionComics',Impact,sans-serif;
+    letter-spacing:1px
+}
+h1{
+    font-size:clamp(2.6rem,7vw,6rem)
+}
+h2{
+    font-size:clamp(1.9rem,4vw,3rem)
+}
+.navbar{
+    background:#101119eF!important;
+    border-bottom:1px solid #383944
+}
+.navbar-brand{
+    color:var(--rojo)!important;
+    font-size:1.7rem
+}
+.nav-link{
+    color:#eee!important
+}
+.nav-link:hover,.nav-link.active{
+    color:var(--verde)!important
+}
+.hero{
+    background:radial-gradient(circle at 75% 30%,#54237c88,transparent 40%),linear-gradient(120deg,#101019,#08090e);
+    min-height:65vh;
+    display:flex;
+    align-items:center
+}
+.kicker{
+    font-family:'Championship',sans-serif;
+    color:var(--verde);
+    letter-spacing:3px
+}
+.accent{
+    color:var(--rojo)
+}
+.violet{
+    color:var(--violeta)
+}
+.muted{
+    color:var(--gris)
+}
+.btn-marvel{
+    background:var(--rojo);
+    color:white;border:0
+}
+.btn-marvel:hover{
+    background:#bd1018;
+    color:white
+}
+.btn-outline-marvel{
+    border:1px solid var(--morado);
+    color:white
+}
+.btn-outline-marvel:hover{
+    background:var(--morado);
+    color:white
+}
+.section-pad{
+    padding:5rem 0
+}
+.movie-card,.info-card{
+    background:#161821;
+    border:1px solid #353846;
+    border-radius:14px;
+    overflow:hidden;
+    height:100%;
+    transition:transform .35s,border-color .35s,box-shadow .35s
+}
+.movie-card:hover,.info-card:hover{
+    transform:translateY(-7px);
+    border-color:var(--morado);
+    box-shadow:0 12px 35px #6825bd44
+}
+.poster{
+    width:100%;
+    aspect-ratio:2/3;
+    object-fit:cover;
+    background:linear-gradient(145deg,#381b50,#151923);
+    transition:transform .5s
+}
+.poster-wrap{
+    overflow:hidden;
+    position:relative
+}
+.poster-wrap:hover .poster{
+    transform:scale(1.09)
+}
+.movie-no{
+    position:absolute;
+    top:12px;
+    left:12px;
+    background:#ed1d24;
+    color:white;
+    border-radius:6px;
+    padding:3px 9px;
+    font-weight:bold
+}
+.movie-card h3{
+    font-family:'Milesdane',sans-serif;
+    font-size:1.25rem
+}
+.year{
+    color:var(--verde);
+    font-weight:bold
+}
+.movie-card p{
+    color:#cbd0da;
+    font-size:.95rem
+}
+.tag{
+    display:inline-block;
+    background:#292039;
+    color:#dbc0ff;
+    border-radius:20px;
+    padding:3px 12px;
+    font-size:.85rem
+}
+.carousel-item img{
+    height:min(64vh,560px);
+    width:100%;
+    object-fit:cover;
+    filter:brightness(.52)
+}
+.carousel-caption{
+    background:#08090ecc;
+    border-radius:14px;
+    padding:1rem;
+    bottom:2rem
+}
+.timeline{
+    border-left:3px solid var(--morado);
+    padding-left:1.5rem
+}
+.timeline-entry{
+    position:relative;
+    margin-bottom:1.2rem;
+    padding:1rem;
+    background:#161821;
+    border-radius:12px
+}
+.timeline-entry:before{
+    content:'';
+    position:absolute;
+    left:-2.06rem;
+    top:1.5rem;
+    width:12px;
+    height:12px;
+    background:var(--verde);
+    border-radius:50%
+}
+.form-control,.form-select{
+    background:#191b25;
+    color:white;
+    border:1px solid #545767
+}
+.form-control:focus,.form-select:focus{
+    background:#191b25;
+    color:white;
+    border-color:var(--violeta);
+    box-shadow:0 0 0 .2rem #9a55ee33
+}
+.form-control::placeholder{
+    color:#adb0bc
+}
+.form-label{
+    color:#e8e9ee
+}
+.invalid-feedback{
+    color:#ff8791
+}
+.form-check-input:checked{
+    background-color:var(--morado);
+    border-color:var(--morado)
+}
+footer{
+    background:#11121a;
+    border-top:1px solid #353846;
+    color:var(--gris)
+}
+.reveal{
+        opacity:0;
+        transform:translateY(24px);
+        transition:opacity .85s,transform .85s
+}
+.reveal.visible{
+    opacity:1;
+    transform:none
+}
+@media(prefers-reduced-motion:reduce)
+{
+.reveal{opacity:1;transform:none;transition:none}*{scroll-behavior:auto!important}
+}
