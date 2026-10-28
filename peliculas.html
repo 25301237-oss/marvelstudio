@@ -1,75 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Explora 34 películas del Universo Cinematográfico Marvel en orden cronológico.">
-        <title>34 películas | Marvel Studio</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="description" content="Explora el universo cinematográfico Marvel, sus películas y personajes.">
+        <title>CATÁLOGO DE PELÍCULAS | Universo Marvel</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-                <div class="container">
-                    <a class="navbar-brand" href="index.html">MARVEL STUDIO</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
-                        <span class="navbar-toggler-icon"></span></button>
-                        <div class="collapse navbar-collapse" id="menu">
-                            <ul class="navbar-nav ms-auto">
-                                <li class="nav-item">
-                                    <a class="nav-link " href="index.html">Inicio</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="peliculas.html">Películas</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link " href="cronologia.html">Cronología</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link " href="personajes.html">Personajes</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link " href="favorita.html">Tu favorita</a>
-                                </li>
-                            </ul>
-                        </div>
+        <header class="topbar">
+            <nav class="nav wrap">
+                <a class="logo" href="index.html">
+                    <span>MARVEL</span>
+                    <b>UNIVERSE</b>
+                </a>
+                <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+                <div class="nav-links">
+                    <a class="nav-link " href="index.html">Inicio</a>
+                    <a class="nav-link active" href="peliculas.html">Películas</a>
+                    <a class="nav-link " href="cronologia.html">Cronología</a>
+                    <a class="nav-link " href="personajes.html">Personajes</a>
+                    <a class="nav-link " href="favorita.html">Tu favorita</a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="page-intro wrap reveal">
+                <span class="eyebrow">TODAS LAS HISTORIAS</span>
+                <h1>CATÁLOGO DE PELÍCULAS</h1>
+            </section>
+            <section class="wrap section">
+                <div class="filters">
+                    <label>Buscar película<input id="buscador" type="search" placeholder="Ej. Iron Man, Thor, Vengadores..."></label>
+                    <label>Año de estreno<select id="filtro">
+                        <option value="">Todos los años</option></select></label>
                     </div>
-                </nav>
-            </header>
-            <main>
-                <section class="section-pad">
-                    <div class="container">
-                        <p class="kicker">CATÁLOGO MARVEL</p>
-                        <h1>LAS <span class="accent">34 PELÍCULAS</span></h1>
-                        <p class="muted">Orden cronológico narrativo.</p>
-                        <div class="row g-3 mb-4">
-                            <div class="col-md-8">
-                                <label class="form-label" for="buscador">Buscar película</label>
-                                <input id="buscador" class="form-control" placeholder="Ej. Thor, Vengadores, Iron Man">
-                            </div>
-                            <div class="col-md-4">
-                                <label class="form-label" for="filtro">Filtrar por año de estreno</label>
-                                <select id="filtro" class="form-select">
-                                    <option value="">Todos los años</option>
-                                </select>
-                            </div>
-                        </div>
-                        <p id="contador" aria-live="polite"></p>
-                        <div id="catalogo" class="row g-4">                            
-                        </div>
-                    </div>
+                    <p id="contador" class="count" aria-live="polite"></p>
+                    <div id="catalogo" class="poster-grid"></div>
                 </section>
             </main>
-            <footer class="py-4">
-                <div class="container d-flex flex-wrap justify-content-between gap-2">
-                </div>
-            </footer>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
-            </script>
-            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
-            </script>
-            <script src="function.js">
-            </script>
-            </body>
-</html>
+            <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Vista ampliada" hidden>
+                <button class="close-lightbox" aria-label="Cerrar">✕</button>
+                <img alt=""><p></p>
+            </div>
+            <script src="datos.js"></script>
+            <script src="function.js"></script>
+        </body>
+        </html>
